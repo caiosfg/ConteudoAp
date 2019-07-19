@@ -1,0 +1,16 @@
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\ContentApiForm.exe.config
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\ContentApiForm.exe
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\ContentApiForm.pdb
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.csprojResolveAssemblyReference.cache
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.Form1.resources
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.Properties.Resources.resources
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.csproj.GenerateResource.Cache
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.exe
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.pdb
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\DotNetZip.dll
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\DotNetZip.pdb
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\bin\Debug\DotNetZip.xml
+C:\Users\HOME\Documents\Projetos\C#\Ingresso\ContentApiForm\ContentApiForm\ContentApiForm\obj\Debug\ContentApiForm.ObtendoInfo.resources

@@ -1,0 +1,7 @@
+*** Project Conteudo APP ***
+
+ Consumir JSON, e consolidar arquivos.
+Foram utilizados :
+    NewSoftJson ;
+    WindowsForms;
+    Microsoft.Office.Interop.Excel;

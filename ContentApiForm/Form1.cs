@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json;
 using System.Threading;
-using Microsoft.Office.Interop.Excel;
 using System.IO;
 using System.IO.Compression;
+using System.Diagnostics;
 
 
 namespace ContentApiForm
@@ -28,59 +28,65 @@ namespace ContentApiForm
         {
             WebClient client = new WebClient();
 
-            ObtendoInfo form = new ObtendoInfo();
+            timer1.Start();
+            progressBar.Increment(100);
 
-            form.Show();
+            //Endereco do JSON
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            string endereco = client.DownloadString("https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home");
 
-                string endereco = client.DownloadString("https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home");
+            //Deserialize JSON
+            dynamic contbody = JsonConvert.DeserializeObject<dynamic>(endereco);
+            timer1.Stop();
 
-                dynamic contbody = JsonConvert.DeserializeObject<dynamic>(endereco);
+            //Cria Pasta do Diretorio
+            System.IO.Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory), "CsvFolder"));
 
-                txtConteudo.Text = endereco;
+            //Inseri CSV e Dados
+            string strPath = Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory), @"CsvFolder", "testedata.csv");
+            StreamWriter sw = new StreamWriter(strPath, true);
+            
+            sw.WriteLine(contbody);
+            sw.Close();
+           
+            //Exibe no TextBox e Caixa
+            txtConteudo.Text = endereco;
 
-            form.Close();
+            MessageBox.Show("Excel Salvo com Sucesso !");
 
+           
         }
-
-        private void ExportaExcel_Click(object sender, EventArgs e)
-        {
-
-
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
-            Worksheet ws = (Worksheet)excel.ActiveSheet;
-
-            excel.Visible = true;
-
-            ws.Cells[1, 1] = "Dados da Conteudo";
-            ws.Cells[2, 1] = txtConteudo.Text;
-
-        }
-
+   
         private void Compactar_Click(object sender, EventArgs e)
         {
-            string[] arquivo = {txtConteudo.Text};
-            string dirPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            using (StreamWriter envia = new StreamWriter(Path.Combine(dirPath, "Compactado.txt")))
+            //Abre Editor de Seleção e Envia Dados
+            using (var folderBrowser = new FolderBrowserDialog())
             {
-                foreach (string line in arquivo)
-                    envia.WriteLine(line);
+                folderBrowser.Description = "Selecione a Pasta do Arquivo";
+
+                if (folderBrowser.ShowDialog()== DialogResult.OK)
+                {
+                    ZipDir(folderBrowser.SelectedPath);
+                }
             }
 
-            string startPath = dirPath;
-            string zipPath = dirPath;
+        }
 
+        public static void ZipDir(string dir)
+        {
+            //Cria um arquivo Zip que contem o Arquivo
+            string diretorio = Path.GetDirectoryName(dir);
+            Process.Start(diretorio);
+            string nome = Path.GetFileName(dir);
+            string nomeArquivo = Path.Combine(diretorio, nome + ".zip");
             try
             {
-
-                ZipFile.CreateFromDirectory(startPath, zipPath);
+                ZipFile.CreateFromDirectory(dir, nomeArquivo, CompressionLevel.Fastest, true);
             }
-             catch (Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
     }

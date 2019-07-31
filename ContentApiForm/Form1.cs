@@ -13,7 +13,7 @@ using System.Threading;
 using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
-
+using ContentApiForm.Control;
 
 namespace ContentApiForm
 {
@@ -67,6 +67,7 @@ namespace ContentApiForm
                 if (folderBrowser.ShowDialog()== DialogResult.OK)
                 {
                     ZipDir(folderBrowser.SelectedPath);
+
                 }
             }
 
@@ -89,5 +90,24 @@ namespace ContentApiForm
             }
         }
 
+        private void Sender_Click(object sender, EventArgs e)
+        {
+
+          Mail m = new Mail();
+            //Chama o metodo com o arquivo selecionado
+            using (var fileBrowser = new OpenFileDialog())
+            {
+                fileBrowser.Title = "Informe o Arquivo para anexo";
+
+                if (fileBrowser.ShowDialog() == DialogResult.OK)
+                {
+                    m.Envia(fileBrowser.FileName);
+
+                }
+            }
+            
+
+        }
     }
+
 }

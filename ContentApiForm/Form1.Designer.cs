@@ -35,15 +35,16 @@
             this.Compactar = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Sender = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ImportaConteudo
             // 
             this.ImportaConteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ImportaConteudo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImportaConteudo.Location = new System.Drawing.Point(39, 23);
+            this.ImportaConteudo.Location = new System.Drawing.Point(12, 12);
             this.ImportaConteudo.Name = "ImportaConteudo";
-            this.ImportaConteudo.Size = new System.Drawing.Size(312, 46);
+            this.ImportaConteudo.Size = new System.Drawing.Size(259, 51);
             this.ImportaConteudo.TabIndex = 0;
             this.ImportaConteudo.Text = "Importa Conteudo";
             this.ImportaConteudo.UseVisualStyleBackColor = false;
@@ -55,19 +56,19 @@
             this.txtConteudo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConteudo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConteudo.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtConteudo.Location = new System.Drawing.Point(39, 109);
+            this.txtConteudo.Location = new System.Drawing.Point(12, 109);
             this.txtConteudo.Multiline = true;
             this.txtConteudo.Name = "txtConteudo";
-            this.txtConteudo.Size = new System.Drawing.Size(690, 231);
+            this.txtConteudo.Size = new System.Drawing.Size(717, 231);
             this.txtConteudo.TabIndex = 1;
             // 
             // Compactar
             // 
             this.Compactar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Compactar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Compactar.Location = new System.Drawing.Point(378, 23);
+            this.Compactar.Location = new System.Drawing.Point(292, 12);
             this.Compactar.Name = "Compactar";
-            this.Compactar.Size = new System.Drawing.Size(351, 46);
+            this.Compactar.Size = new System.Drawing.Size(298, 51);
             this.Compactar.TabIndex = 3;
             this.Compactar.Text = "Compactar";
             this.Compactar.UseVisualStyleBackColor = false;
@@ -75,16 +76,30 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(39, 80);
+            this.progressBar.Location = new System.Drawing.Point(12, 80);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(690, 23);
+            this.progressBar.Size = new System.Drawing.Size(717, 23);
             this.progressBar.TabIndex = 4;
+            // 
+            // Sender
+            // 
+            this.Sender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Sender.BackgroundImage = global::ContentApiForm.Properties.Resources.Email_Send;
+            this.Sender.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sender.Location = new System.Drawing.Point(609, 12);
+            this.Sender.Name = "Sender";
+            this.Sender.Size = new System.Drawing.Size(127, 51);
+            this.Sender.TabIndex = 5;
+            this.Sender.Text = "Send Email";
+            this.Sender.UseVisualStyleBackColor = false;
+            this.Sender.Click += new System.EventHandler(this.Sender_Click);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(761, 352);
+            this.ClientSize = new System.Drawing.Size(748, 355);
+            this.Controls.Add(this.Sender);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.Compactar);
             this.Controls.Add(this.txtConteudo);
@@ -106,6 +121,7 @@
         private System.Windows.Forms.Button Compactar;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Sender;
     }
 }
 

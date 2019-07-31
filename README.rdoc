@@ -1,4 +1,11 @@
-*** Project Conteudo APP ***
+** Project Conteudo APP **
 
- Consumir JSON, Exportar CSV, e Compactar o diretório.
+ Consumir JSON, exportar CSV, compactar o diretório e enviar arquivo via e-mail.
 
+```
+System.Net
+System.Net.Mail
+Newtonsoft.Json
+System.IO
+System.IO.Compression
+```
